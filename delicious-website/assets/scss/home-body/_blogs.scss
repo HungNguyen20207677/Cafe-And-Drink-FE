@@ -1,0 +1,173 @@
+@use "../globals/variables" as *;
+
+@font-face {
+  font-family: "UTMBryantLGBold";
+  src: url("UTMBryantLGBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+.blogs {
+  background-image: url(//bizweb.dktcdn.net/100/332/765/themes/894765/assets/bg_blog.png?1676258982209);
+  padding: 60px 0 55px;
+  background-repeat: repeat;
+
+  .title {
+    padding: 40px 0px 0 0;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    &::before {
+      content: "";
+      width: 26px;
+      height: 30px;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(//bizweb.dktcdn.net/100/332/765/themes/894765/assets/bg-title.png?1665388427353);
+    }
+
+    h2 {
+      font-family: $font-header;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 24px;
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+
+      &::before {
+        content: "";
+        width: 215px;
+        position: absolute;
+        border: 0.75px dashed #c3c3c3;
+        top: 50%;
+        left: -223px;
+      }
+
+      &::after {
+        content: "";
+        width: 215px;
+        position: absolute;
+        border: 0.75px dashed #c3c3c3;
+        top: 50%;
+        right: -223px;
+      }
+    }
+  }
+
+  .thumbnail {
+    border: 8px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 252px;
+    margin-bottom: 15px;
+    opacity: 1;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  .icescream {
+    background-image: url("/assets/img/Donuts-chocolate.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .rainbow {
+    background-image: url("/assets/img/rainbow.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .frostcake {
+    background-image: url("/assets/img/frostcake.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .tag {
+    text-decoration: none;
+    background-color: $main-color;
+    border: 1px solid $main-color;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    font-family: $font-header;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    display: inline-block;
+    padding: 10px;
+    line-height: 16px;
+    transition: all ease 0.5s;
+
+    &:hover {
+      background-color: #fff;
+      color: $main-color;
+    }
+  }
+
+  .blog-title {
+    text-decoration: none;
+    color: #333;
+    font-family: $font-header;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    margin: 0 0px 10px;
+    position: relative;
+    display: block;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  .detail {
+    text-decoration: none;
+    color: #ef7147;
+    font-size: 13px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    display: block;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 991.99px) {
+  #home-content {
+    .blogs {
+      .tablet-hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.99px) {
+  #home-content {
+    .blogs {
+      .mobile-hidden {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,227 @@
+@use "../globals/variables" as *;
+
+@font-face {
+  font-family: "UTMBryantLGBold";
+  src: url("UTMBryantLGBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.categories {
+  background-image: url(//bizweb.dktcdn.net/100/332/765/themes/894765/assets/bg_about.png?1676258982209);
+  background-repeat: repeat;
+  padding-bottom: 100px;
+
+  .categories-section {
+    padding-top: 60px;
+
+    &:nth-child(n + 2) {
+      margin-top: 30px;
+    }
+  }
+
+  .content {
+    height: 380px;
+
+    .menu {
+      background: $main-color;
+      padding: 0;
+      margin-right: -30px;
+      position: relative;
+
+      .menu-thumbnail {
+        background-image: url("/assets/img/Donuts-chocolate.jpg");
+        height: 45%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .icescream-thumbnail {
+        background-image: url("/assets/img/morozhenoe-plombir-shokoladnoe-4488.jpg");
+      }
+
+      .drink-thumbnail {
+        background-image: url("/assets/img/strawberrycoffe.jpg");
+      }
+
+      .categories-list {
+        padding-left: 0px;
+
+        .category {
+          list-style-type: none;
+          font-family: $font-base;
+          color: #fff;
+          font-weight: lighter;
+          font-size: 14px;
+          padding: 14px 0px;
+          width: 76%;
+          transition: all ease 0.5s;
+          margin: 0 16px;
+
+          &:hover {
+            cursor: pointer;
+            background-color: #fff;
+            color: $main-color;
+            width: 100%;
+            margin: 0;
+            padding-left: 16px;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 0.75px dashed rgba($color: #ffffff, $alpha: 0.5);
+          }
+
+          .list-arrow {
+            font-size: 12px;
+            margin-right: 6px;
+          }
+        }
+      }
+
+      .scroll-bar {
+        position: absolute;
+        height: 10%;
+        border-left: 4px solid #fff;
+        border-radius: 10px;
+        right: 30px;
+        top: 50%;
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 450%;
+          border-left: 4px solid #fff;
+          border-radius: 10px;
+          right: 0px;
+          top: 0px;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .icescream-menu {
+      background: #ffbb00;
+    }
+
+    .drink-menu {
+      background: #c50000;
+    }
+
+    .products-panel {
+      height: 100%;
+      position: relative;
+
+      .arrow-btn {
+        position: absolute;
+        top: 45%;
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #a3a3a3;
+        font-size: 12px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .left-btn {
+        left: 0px;
+      }
+      .right-btn {
+        right: 0px;
+      }
+
+      .products {
+        background-image: url(//bizweb.dktcdn.net/100/332/765/themes/894765/assets/bg_featured.png?1676258982209);
+        background-repeat: repeat;
+        height: 100%;
+        padding: 30px 40px;
+      }
+    }
+  }
+  .title {
+    padding: 40px 0px 0 0;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    &::before {
+      content: "";
+      width: 26px;
+      height: 30px;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(//bizweb.dktcdn.net/100/332/765/themes/894765/assets/bg-title.png?1665388427353);
+    }
+
+    h2 {
+      font-family: $font-header;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 24px;
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+
+      &::before {
+        content: "";
+        width: 215px;
+        position: absolute;
+        border: 0.75px dashed #c3c3c3;
+        top: 50%;
+        left: -223px;
+      }
+
+      &::after {
+        content: "";
+        width: 215px;
+        position: absolute;
+        border: 0.75px dashed #c3c3c3;
+        top: 50%;
+        right: -223px;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 991.99px) {
+  #home-content {
+    .categories {
+      .content {
+        display: flex;
+        justify-content: center;
+        .products-panel {
+          .products {
+            .tablet-hidden {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.99px) {
+  #home-content {
+    .categories {
+      .content {
+        .products-panel {
+          .products {
+            .mobile-hidden {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
